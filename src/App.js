@@ -2,7 +2,9 @@ import { Routes, Route } from "react-router-dom";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from "./Components/Home/home.js";
+import { useEffect } from "react";
 function App() {
+ 
   return (
     <div className="App">
       <Routes>

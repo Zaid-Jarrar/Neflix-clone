@@ -12,6 +12,7 @@ const ModalMovie = (props) => {
         props.updateCaption(newData, props.movie.id);
         console.log(1111111111,props.movie)
     }
+
   return (
     <>
        <Modal show={props.show} onHide={() => { props.handleClose() }}>
@@ -19,7 +20,7 @@ const ModalMovie = (props) => {
                     <Modal.Title>{props.movie.title}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <img width='100%' src={props.movie.poster_path} alt={props.movie.title} />
+                    <img width='100%' src={`https://www.themoviedb.org/t/p/w600_and_h900_bestv2/${props.movie.poster_path}`} alt={props.movie.title} />
                     <p>{props.movie.topText ? props.movie.topText : "No Text Provided"}</p>
                     <p>{props.movie.caption}</p>
                 </Modal.Body>

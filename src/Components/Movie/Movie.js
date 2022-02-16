@@ -9,7 +9,7 @@ const Movie = (props) => {
   return (
     <div key= {props.movie.id}>
     <Card key={props.movie.id} >
-        <Card.Img variant="top" src={props.movie.poster_path} />
+        <Card.Img variant="top" src={`https://www.themoviedb.org/t/p/w600_and_h900_bestv2/${props.movie.poster_path}`} />
         <Card.Body>
             <Card.Title>{props.movie.title}</Card.Title>
             <Card.Text>
@@ -18,7 +18,7 @@ const Movie = (props) => {
             <Card.Text>
                 {props.movie.caption}
             </Card.Text>
-            <Button variant="primary" onClick={() => { props.setMovie(props.movie); props.setShowModal(true) }} >Add To Favorites</Button>
+            <Button variant="primary" onClick={() => { props.setMovie(props.movie); props.setShowModal(true) }} >Show Modal</Button>
         </Card.Body>
     </Card>
     
