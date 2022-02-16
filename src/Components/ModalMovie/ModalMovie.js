@@ -13,6 +13,34 @@ const ModalMovie = (props) => {
         console.log(1111111111,props.movie)
     }
 
+    async function addToFavorite(movie){
+        try{
+            const res = await fetch(`${process.env.REACT_APP_SERVER}/addMovie`, {
+                method: "POST",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    title : movie.title,
+                    posterPath : `https://www.themoviedb.org/t/p/w600_and_h900_bestv2/${movie.poster_path}`,
+                    overview : movie.caption,
+
+                })
+                
+
+            })
+            const data = await res.json();
+            console.log(data)
+
+
+
+        } catch (error) {
+            console.log("error", error);
+        }
+    }
+
+
   return (
     <>
        <Modal show={props.show} onHide={() => { props.handleClose() }}>
@@ -31,6 +59,9 @@ const ModalMovie = (props) => {
                     </Form.Group>
                     <Button className="addBtn" variant="primary" type="submit" onClick={handleCaption}  >
                         Add a Caption
+                    </Button>
+                    <Button variant="primary" onClick={()=> addToFavorite(props.movie)}>
+                        add to favorite
                     </Button>
                     <Button variant="secondary" onClick={props.handleClose}>
                         Close

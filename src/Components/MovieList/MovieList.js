@@ -3,6 +3,7 @@ import { CardGroup } from 'react-bootstrap';
 import { useState } from 'react';
 import Movie from '../Movie/Movie.js'
 import ModalMovie from '../ModalMovie/ModalMovie.js'
+// import "./MovieList.css"
 
  const MovieList = (props) => {
     const [movie, setMovie] = useState()
