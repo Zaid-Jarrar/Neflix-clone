@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import {Router, Routes, Route } from "react-router-dom";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from "./Components/Home/home.js";
@@ -31,10 +31,12 @@ function App() {
   return (
     <div className="App">
       <Navbars/>
+      
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/favorite" element={<FavList favoriteList={favoriteList}/>} />
       </Routes>
+      
     </div>
   );
 }
