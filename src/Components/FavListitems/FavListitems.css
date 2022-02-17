@@ -1,0 +1,5 @@
+.cardss{
+    display: flex;
+    flex-wrap: wrap;
+background-color: rgb(204, 172, 177);
+}
