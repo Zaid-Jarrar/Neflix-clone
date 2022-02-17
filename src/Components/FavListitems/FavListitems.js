@@ -4,11 +4,12 @@ import "./FavListitems.css"
 function FavListItems(props){
     return(
         <>
-        <CardGroup style = {{display: "flex"}} className = "FavList" >
+        <CardGroup  className = "FavList" >
             {
                 
                 (props.favoriteList ?? []).map(movie => {
                     return (
+                        <div style = {{display: "grid", gridTemplateColums: "1fr 1fr 1fr 1fr"}}>
                         <Card key={movie.id} className = "cardss">
                             <Card.Img variant="top" src={`https://www.themoviedb.org/t/p/w600_and_h900_bestv2/${movie.posterpath}`} />
                             <Card.Body>
@@ -19,6 +20,7 @@ function FavListItems(props){
                                 </Card.Text>
                             </Card.Body>
                         </Card>
+                        </div>
                     )
                 })
             }
